@@ -1,0 +1,453 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4faff;
+    color: #333;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #0095f6;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #0095f6;
+}
+
+.navbar img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Main Layout */
+.main-container {
+    display: flex;
+    margin: 20px;
+}
+
+/* Side Panel */
+.sidebar {
+    width: 20%;
+    background-color: #ffffff;
+    border: 1px solid #dbdbdb;
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+    height: auto;
+}
+
+.sidebar h2 {
+    font-size: 18px;
+    color: #0095f6;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0095f6;
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.sidebar ul li a:hover {
+    color: #0095f6;
+    text-decoration: underline;
+}
+
+/* Grid Layout for Photos/Albums */
+.container {
+    width: 100%; /* Slightly wider for better fit on smaller screens */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Smaller min-width for photos */
+    gap: 15px; /* Adjusted gap for smaller spacing */
+    margin: 0 auto; /* Center the grid on the page */
+}
+
+/* Individual Photo/Album Container */
+.photoContainer {
+    border: 2px solid #dbdbdb;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    max-width: 580px; /* Limit the maximum width of each photo container */
+    margin: 0 auto; /* Center each container */
+}
+
+.photoContainer:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Styling */
+.photoContainer img {
+    width: 100%;
+    height: 350px; /* Set a fixed height for uniform photo sizes */
+    object-fit:contain; /* Maintain aspect ratio while cropping overflow */
+    display: block;
+}
+
+/* Description Styling */
+.photoDescription {
+    padding: 10px; /* Reduced padding for a more compact look */
+    font-size: 13px; /* Slightly smaller font */
+    text-align: center;
+}
+
+/* Link Styling */
+.photoDescription a {
+    color: #007aff; /* Updated to a vibrant blue for better visibility */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.photoDescription a:hover {
+    text-decoration: underline;
+}
+
+
+/* Buttons */
+button {
+    background-color: #0095f6;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #007bb5;
+}
+
+button:disabled {
+    background-color: #b2dffc;
+    cursor: not-allowed;
+}
+
+/* Forms */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #dbdbdb;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    font-size: 14px;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #0095f6;
+    outline: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .container {
+        width: 100%;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+
+/* Headings */
+h1 {
+    font-size: 2.5rem; /* Larger size for prominence */
+    color: #0047ab; /* Bold blue */
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: #ff6f61; /* Coral as the secondary color */
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+    border-left: 5px solid #0047ab; /* Blue accent bar */
+    padding-left: 10px;
+}
+
+/* Add hover effects for headings in interactive elements */
+h1:hover, h3:hover {
+    color: #003580; /* Darker blue on hover for emphasis */
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+h4 {
+    text-align: center;
+}
+
+/* Section Titles */
+.section-title {
+    background-color: #0047ab;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.section-title.secondary {
+    background-color: #ff6f61;
+    color: #ffffff;
+}
+
+/* Centered Container Styling */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+    width: 80%; /* Constrain container width */
+    max-width: 1200px;
+}
+
+/* Clean Box Styling */
+.box {
+    background-color: #f9f9f9; /* Soft background */
+    border: 1px solid #ddd; /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 20px 30px;
+    text-align: center; /* Center text inside */
+    width: 100%; /* Full width of container */
+    max-width: 800px; /* Limit width */
+}
+
+/* Headings Inside the Box */
+.box h3 {
+    font-size: 1.75rem;
+    color: #0047ab; /* Blue primary color */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.box p {
+    font-size: 1.1rem;
+    color: #555; /* Neutral text */
+    line-height: 1.6;
+}
+
+/* Buttons in the Box */
+.box a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #0047ab; /* Blue button */
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.box a:hover {
+    background-color: #003580; /* Darker blue on hover */
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .box {
+        width: 90%;
+    }
+}
+
+/* Image Styling (Profile Photo or Album Thumbnail) */
+.box img {
+    max-width: 100%; /* Ensure responsiveness */
+    max-height: 300px; /* Limit the maximum height */
+    object-fit: cover; /* Maintain aspect ratio while cropping overflow */
+    border-radius: 10px; /* Rounded corners for images */
+    margin-bottom: 20px; /* Add spacing below the image */
+    border: 1px solid #ddd; /* Subtle border for separation */
+}
+
+/* General Form Styling */
+.insertPhotoForm, .albumForm {
+    background-color: #f9f9f9; /* Light background for clean look */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 100%;
+    max-width: 500px; /* Limit width for better control */
+    margin: 20px auto; /* Centered with spacing */
+}
+
+.insertPhotoForm p, .albumForm p {
+    margin-bottom: 15px; /* Spacing between form elements */
+}
+
+.insertPhotoForm label, .albumForm label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+    color: #333;
+}
+
+.insertPhotoForm input[type="text"], .insertPhotoForm select, .albumForm input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+.insertPhotoForm input[type="file"] {
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.insertPhotoForm input[type="submit"], .albumForm input[type="submit"] {
+    background-color: #0095f6; /* Instagram-style blue */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.insertPhotoForm input[type="submit"]:hover, .albumForm input[type="submit"]:hover {
+    background-color: #0077cc; /* Darker blue for hover effect */
+}
+
+/* Sidebar Styling */
+.main-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.sidebar {
+    width: 300px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.sidebar h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.sidebar ul li form {
+    margin-top: 10px;
+    display: inline;
+}
+
+/* Make sure the page is responsive */
+@media (max-width: 768px) {
+    .insertPhotoForm, .albumForm {
+        max-width: 90%; /* Adjust width on smaller screens */
+        padding: 15px;
+    }
+    
+    .main-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
